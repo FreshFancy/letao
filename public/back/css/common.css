@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.body-bgc {
+  background-color: #222d32;
+}
+.mg-top {
+  margin-top: 200px;
+}
+.panel-title {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.form-horizontal .control-label {
+
+}
