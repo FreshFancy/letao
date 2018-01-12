@@ -31,7 +31,7 @@ if(location.href.indexOf("login.html") == -1) {
 //二级分类显示隐藏功能
 $('.subcate').prev().on('click',function () {
   $(this).next().slideToggle();
-})
+});
 
 //侧边栏显示隐藏功能
 $('.icon-menu').on('click',function () {
@@ -41,3 +41,20 @@ $('.icon-menu').on('click',function () {
 });
 
 //退出功能
+$('.icon-out').on('click',function () {
+  $('#logoutModal').modal('show')
+});
+
+$('.btn_exit').on('click',function () {
+  $.ajax({
+    type:'get',
+    url:'/employee/employeeLogout',
+    success:function (info) {
+      console.log(info);
+      if(info.success) {
+          location.href = "login.html"
+        }
+    }
+  })
+
+})

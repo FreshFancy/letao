@@ -35,7 +35,7 @@ a:link, a:visited, a:hover, a:active {
   transition: all 1s;
   z-index: 999;
 }
-.lt-aside .now {
+.lt-aside.now {
   left: -180px;
 }
 
@@ -67,13 +67,15 @@ a:link, a:visited, a:hover, a:active {
 .lt-aside .nav a {
   display: block;
   height: 50px;
-  width: 100%;
   text-align: center;
   color: #ccc;
   line-height:50px;
   border-left: 3px solid transparent;
 }
-.lt-aside .nav a.active {
+.lt-aside .nav .subcate a {
+  padding-left: 25px;
+}
+.lt-aside .nav a.current {
   border-left-color: #0cbaff;
   color: #fff;
   background-color: #1d1f21;
@@ -111,7 +113,7 @@ a:link, a:visited, a:hover, a:active {
 .pic_left,
 .pic_right {
   width: 45%;
-  height: 300px;
+  height: 500px;
 }
 
 
