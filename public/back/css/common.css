@@ -21,6 +21,9 @@ a:link, a:visited, a:hover, a:active {
 .mg-top {
   margin-top: 200px;
 }
+.mg-bottom {
+  margin-bottom: 30px;
+}
 .panel-title {
   font-size: 18px;
   margin: 10px 0;
