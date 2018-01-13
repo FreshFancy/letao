@@ -75,7 +75,7 @@ a:link, a:visited, a:hover, a:active {
 .lt-aside .nav .subcate a {
   padding-left: 25px;
 }
-.lt-aside .nav a.current {
+.lt-aside .nav a.now {
   border-left-color: #0cbaff;
   color: #fff;
   background-color: #1d1f21;
@@ -87,7 +87,7 @@ a:link, a:visited, a:hover, a:active {
   transition: all 1s;
   padding-top:70px;
 }
-.lt-main .now {
+.lt-main.now {
   padding-left: 0;
 }
 
@@ -116,7 +116,10 @@ a:link, a:visited, a:hover, a:active {
   height: 500px;
 }
 
-
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}
 
 
 
