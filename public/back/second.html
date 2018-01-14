@@ -32,7 +32,7 @@
           分类管理
         </a>
         <div class="subcate" style="display: block;">
-          <a href="first.html">一级分类</a>
+          <a href="first.html" >一级分类</a>
           <a href="second.html" class="now">二级分类</a>
         </div>
       </li>
@@ -63,7 +63,25 @@
 
     <!--内容区域-->
     <div class="lt_content">
-
+      <button class="btn btn-default mg-bottom btn-inc">添加分类</button>
+      <!--表格-->
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <td width="10%">序号</td>
+          <td width="30%">一级分类名称</td>
+          <td width="30%">二级分类名称</td>
+          <td width="30%">二级分类LOGO</td>
+        </tr>
+        </thead>
+        <tbody>
+        <!--@@@@@@@@@-->
+        </tbody>
+      </table>
+      <!--分页-->
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
     </div>
   </div>
 </div>
@@ -89,13 +107,89 @@
     </div>
   </div>
 </div>
+<!--二级分类模态框-->
+<div class="modal fade" tabindex="-1" id="secondModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">添加分类</h4>
+      </div>
+      <form>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                <span class="dropdown-text">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+              <!--button没有name属性无法传值，所以要通过隐藏域向后台传值-->
+              <input type="hidden" name="categoryId">
+              <ul class="dropdown-menu">
+                <!--<li><a href="#">女式馆</a></li>-->
+                <!--@@@@@@@@@@-->
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control cateName"  placeholder="请输入二级分类的名称" name="brandName">
+          </div>
+          <div class="form-group">
+            <!--将两个包裹起来，真正的上传文件input：file定位通过opacity=0，假隐藏-->
+            <div class="fileupload-box">
+              <button class="btn btn-default">上传图片</button>
+              <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic">
+            </div>
+          </div>
+          <div class="form-group img-upload">
+            <img src="images/none.png" width="100" height="100" alt="">
+            <!--img没有name属性无法传值，所以要通过隐藏域向后台传值-->
+            <input type="hidden" name="brandLogo">
+            <input type="hidden" name="hot">
+          </div>
+
+      </div>
+        <div class="modal-footer">
+        <button  class="btn btn-default" data-dismiss="modal">取消</button>
+        <button class="btn btn-primary btn-add">添加</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--分类模板-->
+<script type="text/html" id="tmp-subcate">
+  {{ each rows v i}}
+  <tr>
+    <td>{{ (page-1)*size + i + 1}}</td>
+    <td>{{ v.categoryName }}</td>
+    <td>{{ v.brandName }}</td>
+    <td><img src="{{ v.brandLogo }}" width="50" height="50" alt=""></td>
+  </tr>
+  {{ /each }}
+</script>
+<!--下拉框模板-->
+<script type="text/html" id="tmp">
+  {{ each rows v i}}
+  <li><a data-id='{{ v.id }}' href="#">{{ v.categoryName }}</a></li>
+  {{ /each }}
+</script>
+
+
+
 
 <script src="./assets/jquery/jquery.min.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="./assets/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="./assets/nprogress/nprogress.js"></script>
-
+<script src="./assets/artTemplate/template-web.js"></script>
+<script src="assets/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="assets/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="assets/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/second.js"></script>
 
 </body>
 </html>

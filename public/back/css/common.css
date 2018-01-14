@@ -123,6 +123,20 @@ a:link, a:visited, a:hover, a:active {
   text-align: center;
   vertical-align: middle;
 }
+.table.table-bordered td img {
+  display: inline-block;
+}
+.fileupload-box {
+  position: relative;
+}
+.fileupload-box input {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
 
 
 
