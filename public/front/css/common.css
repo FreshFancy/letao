@@ -1,0 +1,109 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.lt-container {
+  min-width: 320px;
+  max-width: 640px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  position: relative;
+  padding: 45px 0 55px 0;
+}
+
+/*====header========*/
+.lt-header {
+  width: 100%;
+  height: 45px;
+  background-color: #069;
+  /*因为页面是全屏的，中间是区域滚动，不存在滚动条，所以可以用绝对定位*/
+  position: absolute;
+  top: 0;
+  padding: 0 45px;
+}
+.lt-header .menu,
+.lt-header .search {
+  width: 45px;
+  height: 45px;
+  line-height:45px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+}
+.lt-header .menu {
+  left:0;
+}
+.lt-header .search {
+  right: 0;
+}
+.lt-header .menu a,
+.lt-header .search a {
+  color: #fff;
+}
+.lt-header .title {
+  text-align: center;
+  line-height:45px;
+  height: 45px;
+}
+.lt-header .title p {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom:0;
+}
+
+/*========main========*/
+.lt-main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
+
+
+
+
+
+/*=====footer====*/
+.lt-footer {
+  width: 100%;
+  height: 55px;
+  background-color: #069;
+  position: absolute;
+  bottom: 0;
+}
+.lt-footer li {
+  float: left;
+  width:25%;
+  height: 55px;
+  text-align: center;
+  padding-top: 7px;
+}
+.lt-footer li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.lt-footer  a p {
+  font-size: 12px;
+  color:#fff;
+  margin: 0;
+}
+.lt-footer li.active a {
+  color: darkorange;
+}
+.lt-footer li.active p {
+  color: darkorange;
+}

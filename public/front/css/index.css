@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.lt-main .nav {
+  padding: 10px;
+}
+.lt-main .nav li {
+  float: left;
+  width: 33.33%;
+}
+.lt-main .goods {
+  padding: 10px;
+  text-align: center;
+}
+.lt-main .goods li {
+  float: left;
+  width:48%;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.lt-main .goods li:nth-child(odd) {
+  margin-right: 4%;
+}
+.lt-main .goods .price {
+  color: red;
+}
+.lt-main .goods .normalPrice {
+  text-decoration: line-through;
+  color: #bbb;
+}
+.lt-main .goods button {
+  display: block;
+  margin: 5px auto;
+}

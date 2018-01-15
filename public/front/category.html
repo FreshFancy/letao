@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="./assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="./assets/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/category.css">
+</head>
+<body>
+<div class="lt-container">
+  <div class="lt-header">
+    <div class="menu">
+      <a href="index.html">
+        <i class="mui-icon mui-icon-back"></i>
+      </a>
+    </div>
+    <div class="title">
+      <p>乐淘分类</p>
+    </div>
+    <div class="search">
+      <a href="search.html">
+        <i class="fa fa-search"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="lt-main">
+    <div class="cate-nav">
+      <!--区域滚动的父容器，绝对定位的-->
+      <div class="mui-scroll-wrapper">
+        <!--区域滚动的子容器-->
+        <div class="mui-scroll">
+          <ul>
+            <!--@@@@@@@@-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cate-goods">
+      <div class="mui-scroll-wrapper">
+        <!--区域滚动的子容器-->
+        <div class="mui-scroll">
+          <ul>
+            <!--@@@@@@@@@@@-->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="lt-footer">
+    <ul class='mui-clearfix'>
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li class='active'>
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--左侧导航的模板-->
+<script type="text/html" id="tmp-nav">
+  {{ each rows v i}}
+    <li data-id='{{ v.id }}'><a href="#">{{ v.categoryName }}</a></li>
+  {{ /each }}
+</script>
+
+<!--右侧商品的模板-->
+<script type="text/html" id="tmp-goods">
+  {{ if(total == 0) }}
+    <p style="color: #000; margin: 10px">该品类下没有更多的品牌信息</p>
+  {{ /if }}
+  {{ each rows v i}}
+    <li>
+      <a href="#">
+        <img src="{{ v.brandLogo }}" alt="">
+        <p>{{ v.brandName }}</p>
+      </a>
+    </li>
+  {{ /each }}
+</script>
+
+
+
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="./assets/mui/js/mui.js"></script>
+<script src="assets/artTemplate/template-web.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/category.js"></script>
+</body>
+</html>
